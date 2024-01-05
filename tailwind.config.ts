@@ -5,8 +5,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode:'class',
   theme: {
     extend: {
+      
       colors: {
         green: {
           50: '#30AF5B',
@@ -50,4 +52,5 @@ module.exports = {
     },
   },
   plugins: [],
+
 };
