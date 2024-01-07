@@ -3,7 +3,11 @@
 import { ThemeProvider } from "next-themes"
 import { useState, useEffect } from "react"
 
-export default function Providers({children}){
+
+type ProverderProp = {
+    children: React.ReactNode
+}
+export default function Providers({children}:ProverderProp){
 const [mounted, setMounted] = useState(false)
 
 useEffect(()=>{
