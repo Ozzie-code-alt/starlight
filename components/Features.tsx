@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import { FEATURES } from "@/contants";
-import { title } from "process";
 const Features = () => {
   return (
-    <section className="border-2 border-red-500 flex-col flexCenter overflow-hidden bg-feature-bg bg-center bg-no-repeat py-24">
+    <section className="border-2 border-red-500 flex-col flexCenter overflow-hidden bg-feature-bg bg-center dark:bg-white mb-20 mt-20 bg-no-repeat py-24">
       <div className="max-container flex padding-container relative w-full justify-end ">
         <div className="flex flex-1 lg:min-h-[900px] ">
           <Image
@@ -30,13 +29,13 @@ const Features = () => {
             </h2>
           </div>
 
-          <ul  className="mt-10 grid gap-10 md:grid-cols-2 lg:mt-20 gap-20">
+          <ul  className="mt-10 grid gap-10 md:grid-cols-2 lg:mt-20 lg:gap-20">
             {FEATURES.map((feature) => (
               <FeatureItem
                 title={feature.title}
                 key={feature.title}
                 icon={feature.icon}
-                variant={feature.variant}
+          
                 description={feature.description}
               />
             ))}
