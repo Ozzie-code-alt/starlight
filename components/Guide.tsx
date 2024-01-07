@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
+  slideInFromBottom,
   slideInFromRight,
 } from "@/utils/motion";
 
@@ -36,7 +37,12 @@ const Guide = () => {
         </div>
       </motion.div>
 
-      <div className="flexCenter max-container relative w-full  ">
+      <motion.div className="flexCenter max-container relative w-full "
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={slideInFromBottom(0.5)}
+      >
         <Image
           src={"/boat.png"}
           alt="boat"
@@ -68,7 +74,7 @@ const Guide = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

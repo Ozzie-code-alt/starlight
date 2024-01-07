@@ -28,13 +28,13 @@ const Footer = () => {
               <FooterColumn title={FOOTER_CONTACT_INFO.title}>
                 {FOOTER_CONTACT_INFO.links.map((link) => (
                   <Link
-                    href={"/"}
+                    href={"/forms"}
                     key={link.label}
                     className="flex gap-4 md:flex-col lg:flex-row"
                   >
                     {" "}
                     <p className="whitespace-nowrap">{link.label}:</p>
-                    <p className="mediem-14 whitespace-nowrap text-blue-70">
+                    <p className="mediem-14 whitespace-nowrap text-blue-70 dark:text-green-50">
                       {link.value}
                     </p>
                   </Link>
@@ -43,7 +43,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col gap-5">
               <FooterColumn title={SOCIALS.title}>
-                <ul className="regular-14 flex gap-4 text-gray-30">
+                <ul className="regular-14 flex gap-4 text-gray-30  dark:bg-white dark:rounded-md dark:p-1">
                   {SOCIALS.links.map((link) => (
                     <Link href={"/"} key={link}>
                       <Image src={link} alt="logo" width={24} height={24} />
