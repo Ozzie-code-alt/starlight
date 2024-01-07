@@ -1,6 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { PEOPLE_URL } from "@/contants";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  slideInFromLeft,
+} from "@/utils/motion";
+
 interface CampProps {
   backgroundImage: string;
   title: string;
@@ -50,8 +56,13 @@ const Campsite = ({
 };
 
 const Camp = () => {
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures the animation triggers only once when the element becomes visible
+  });
+
   return (
-    <section className="border-2 border-green-500 2xl:max-container relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:m-20">
+    <section className=" 2xl:max-container relative flex flex-col py-10 lg:mb-10 lg:py-20 xl:m-20">
       <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
         <Campsite
           backgroundImage="bg-bg-img-1"
@@ -67,7 +78,12 @@ const Camp = () => {
         />
       </div>
 
-      <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
+      <motion.div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6"
+       ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={slideInFromLeft(0.5)} // Adjust the delay as needed
+      >
         <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
           <h2 className="regular-24 md:relar-32 2xl:regular-64 capitalize text-white">
             {" "}
@@ -88,7 +104,7 @@ const Camp = () => {
             className="camp-quote"
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

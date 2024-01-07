@@ -1,13 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import Buttons from "./Buttons";
-import TransitionEffect from "./TransitionEffect";
+import { motion } from "framer-motion";
+import {
+  slideInFromBottom,
+} from "@/utils/motion";
+
 const Hero = () => {
   return (
-    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row border-2 border-red-500">
-    
+    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row ">
       <div className="hero-map" />
-      <div className="relative z-20 flex-1 flex-col xl:w-1/2">
+      <motion.div className="relative z-20 flex-1 flex-col xl:w-1/2"
+              initial="hidden"
+              animate="visible"
+              variants={slideInFromBottom(1.5)}
+      >
         <Image
           src="/camp.svg"
           alt="camp"
@@ -54,9 +61,13 @@ const Hero = () => {
             variant="btn_white_text"
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="relative flex flex-1 items-start border-2 border-blue-500 ">
+      <motion.div className="relative flex flex-1 items-start "
+               initial="hidden"
+               animate="visible"
+               variants={slideInFromBottom(1.5)}
+      >
         <div className="relative z-20 w-[268px] flex flex-col gap-8 rounded-3xl bg-gray-90 px-7 py-8">
           <div className="flex flex-col">
             <div className="flexBetween">
@@ -81,7 +92,7 @@ const Hero = () => {
               </div>
             </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

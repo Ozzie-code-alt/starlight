@@ -1,10 +1,23 @@
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import {
+  slideInFromRight,
+} from "@/utils/motion";
 
 const Guide = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Ensures the animation triggers only once when the element becomes visible
+  });
   return (
     <section className="flexCenter flex-col">
-      <div className="border-2 border-red-500 padding-container max-container w-full pb-24">
+      <motion.div className=" padding-container max-container w-full pb-24"
+       ref={ref}
+       initial="hidden"
+       animate={inView ? "visible" : "hidden"}
+       variants={slideInFromRight(0.5)}
+      >
         <Image src={"/camp.svg"} alt="camp" width={50} height={50} />
         <p className="regular-18 -mt-1 mb-3 text-green-50">
           WE ARE HERE FOR YOU
@@ -21,9 +34,9 @@ const Guide = () => {
             uiguiguioguig uiguiogu
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="flexCenter max-container relative w-full border-2 border-blue-500 ">
+      <div className="flexCenter max-container relative w-full  ">
         <Image
           src={"/boat.png"}
           alt="boat"
