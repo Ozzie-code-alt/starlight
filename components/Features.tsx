@@ -14,7 +14,7 @@ const Features = () => {
 
   return (
     <section className=" flex-col flexCenter overflow-hidden bg-feature-bg bg-center dark:bg-white mb-20 mt-20 bg-no-repeat py-24">
-      <div className="max-container flex padding-container relative w-full justify-end ">
+      <div className="max-container flex padding-container relative w-full justify-end">
         <div className="flex flex-1 lg:min-h-[900px] ">
           <Image
             src={"/phone.png"}
@@ -40,7 +40,7 @@ const Features = () => {
              animate={inView ? "visible" : "hidden"}
              variants={slideInFromTop}
             >
-              Our Feartures
+              Our Features
             </motion.h2>
           </div>
 
@@ -73,7 +73,7 @@ const FeatureItem = ({ title, icon, description }: FeatureItem) => {
       <div className="rounded-full p-4 lg:p-7 bg-green-50">
         <Image src={icon} width={28} height={28} alt="icon" />
       </div>
-      <h2 className="bold-20 lg:bold-32 mt-5 capitalize">
+      <h2 className="bold-20 lg:bold-32 capitalize">
         {title}
       </h2>
       <p className="relaagular-16 mt-5 bg-white/80 text-gray-30 lg:mt-[30px] lg:bg-none">{description}</p>

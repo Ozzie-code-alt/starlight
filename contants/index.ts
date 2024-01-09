@@ -1,10 +1,12 @@
+import { title } from "process";
+
 // NAVIGATION
 export const NAV_LINKS = [
-    { href: '/', key: 'home', label: 'Home' },
-    { href: '/', key: 'how_hilink_work', label: 'How Hilink Work?' },
-    { href: '/', key: 'services', label: 'Services' },
-    { href: '/', key: 'pricing ', label: 'Pricing ' },
-    { href: '/', key: 'contact_us', label: 'Contact Us' },
+    { href: '/', key: 'home', label: 'Home', route: '' },
+    { href: '/howHiLink', key: 'how_hilink_work', label: 'How Hilink Work?',route: '' },
+    { href: '/', key: 'services', label: 'Services',route: '' },
+    { href: '/', key: 'pricing ', label: 'Pricing ',route: '' },
+    { href: '/', key: 'contact_us', label: 'Contact Us',route: '' },
   ];
   
   // CAMP SECTION
@@ -85,3 +87,74 @@ export const NAV_LINKS = [
       '/wordpress.svg',
     ],
   };
+
+  export const ABout = [
+    {
+      title: "User Resgistration", 
+      description: "Users start by registering and creating an account on the app.",
+      duration: "1.5"
+    },
+    {
+      title: "Searching for Campsites",
+      description:"Once registered, users can search for campsites using various filters and criteria. The app displays the locations of campsites on a map.",
+      duration: "1.7"
+    },
+    {
+      title: "Viewing Details",
+      description:"After selecting a campsite, users can view detailed information about the site, including amenities, pricing, and availability. They can also read reviews and ratings from other users.",
+      duration: "1.9"
+    },
+    {
+      title: "Booking a Campsite",
+      description:"f a user decides to book a campsite, they can do so directly through the app. The payment process is secure and straightforward.",
+      duration: "2.1"
+    },
+    {
+      title: "Receiving Notifications",
+      description:"Once a booking is confirmed, users receive a confirmation notification. They also receive updates about their booking and reminders for check-in and check-out dates.",
+      duration: "2.3"
+    }
+
+
+  ] 
+
+
+  export const ProgramFlow = [
+    {
+      title: "Download the App",
+      desription: "Start by downloading the Hilink app from the Apple Store or Google Play Store onto your smartphone.Go Do it Now !!! Because, Why NOt ?",
+      image:"/Playing.png",
+      duration: "1.7"
+    },
+    {
+      title: "Create an Account",
+      desription: "Once installed, open the app and sign up using your email address or social media accounts. Fill in the required details like name, location, and travel preferences.",
+      image:"/Reading.png",
+      duration: "1.7"
+    },
+    {
+      title: "Plan Your Trip",
+      desription: "Use the interactive map feature to plan your route. Select your destination and start exploring local attractions, restaurants, and activities. Customize your itinerary based on your preferences and interests.",
+      image:"/Sleek.png",
+      duration: "1.7"
+    },
+    {
+      title: "Book Accommodations and Activities",
+      desription: "Hilink integrates with various booking platforms to allow you to book hotels, flights, car rentals, and activities directly within the app. Simply select the desired options and confirm your booking.",
+      image:"/Studying.png",
+      duration: "1.7"
+    },
+    {
+      title: "Use the In-built Wallet",
+      desription: "If you're making payments within the app, you can use the in-built wallet feature. Add your card details to make payments easily and quickly.",
+      image:"/Strolling.png",
+      duration: "1.7"
+    },
+    {
+      title: "Enjoy Your Journey",
+      desription: "With all your plans in place, you're now ready to embark on your journey. Use the real-time local information feature to stay updated about weather, traffic, and other relevant data. Enjoy your travel!",
+      image:"/Zombie.png",
+      duration: "1.7"
+    },
+  ]
+  
